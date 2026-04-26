@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,10 +24,13 @@ public class Requirement {
    private String description;
 
     @ManyToOne
-    @JoinColumn(name= "sprint_id")
+    @JoinColumn(name= "sprintId")
     private Sprint sprint;
 
     @ManyToOne
-    @JoinColumn(name= "project_id")
+    @JoinColumn(name= "projectId")
     private Project project;
+
+    @OneToMany(mappedBy = "rqr")
+    private List<PullRequest> pullRequests;
 }
