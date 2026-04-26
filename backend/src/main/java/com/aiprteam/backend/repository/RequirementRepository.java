@@ -18,4 +18,5 @@ delete(requirement)*/
 public interface RequirementRepository extends JpaRepository<Requirement, Long> {
     List<Requirement> findBySprint(Sprint sprint);
     List<Requirement> findByProject(Project project);
+
 }

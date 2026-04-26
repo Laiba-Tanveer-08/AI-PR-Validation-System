@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface PullRequestRepository extends JpaRepository<PullRequest, Long> {
 
-    List<PullRequest> findbyProject(Project project);
-    List<PullRequest> findbySprint(Sprint sprint);
-    List<PullRequest> findbyRequirement(Requirement rqr);
+    List<PullRequest> findByProject(Project project);
+    List<PullRequest> findBySprint(Sprint sprint);
+    List<PullRequest> findByRqr(Requirement rqr);
 }
