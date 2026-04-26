@@ -12,34 +12,34 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "GitHubConnection")
+@Table(name = "gitHub_connection")
 public class GitHubConnection {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "repoUrl", nullable = false, unique = true)
+    @Column(name = "repo_url", nullable = false, unique = true)
     private String repoUrl;
 
-    @Column(name = "webhookUrl", nullable = false, unique = true)
+    @Column(name = "webhook_url", nullable = false, unique = true)
     private String webHookUrl;
 
-    @Column(name = "webhookSecret", nullable = false, unique = true)
+    @Column(name = "webhook_secret", nullable = false, unique = true)
     private String webhookSecret;
 
-    @Column(name = "repoName", nullable = false)
-    private String data;
+    @Column(name = "repo_name", nullable = false)
+    private String repoName;
 
-    @Column(name = "repoOwner", nullable = false)
+    @Column(name = "repo_owner", nullable = false)
     private String repoOwner;
 
-    @Column(name = "accessToken", nullable = false)
+    @Column(name = "access_token", nullable = false)
     private String accessToken;
 
-    @Column(name = "connectedAt", nullable = false)
+    @Column(name = "connected_at", nullable = false)
     private LocalDateTime connectedAt;
 
-    @Column(name = "lastSyncedAt", nullable = false)
+    @Column(name = "last_synced_at", nullable = false)
     private LocalDateTime lastSyncedAt;
 
     // Tell active, ended? basically connection status
@@ -52,5 +52,5 @@ public class GitHubConnection {
 
     @ManyToOne
     @JoinColumn(name= "user_id")
-    private User user;
+    private Users user;
 }

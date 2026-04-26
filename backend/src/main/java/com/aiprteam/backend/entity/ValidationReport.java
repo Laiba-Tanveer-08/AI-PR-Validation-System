@@ -9,19 +9,19 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "ValidationReport")
+@Table(name = "validation_report")
 public class ValidationReport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "MissingFeatures")
+    @Column(name = "missing_features")
     private String missingFeatures;
 
-    @Column(name = "MatchedFeatures")
+    @Column(name = "matched_features")
     private String matchedFeatures;
 
-    @Column(name = "Improvements")
+    @Column(name = "improvements")
     private String improvements;
 
     // Tell matching score of requirements and pr features
