@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "PullRequest")
+@Table(name = "pull_request")
 public class PullRequest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +21,7 @@ public class PullRequest {
     @Column(name = "data", nullable = false, unique = true)
     private String data;
 
-    @Column(name = "gitHubPrId", nullable = false, unique = true)
+    @Column(name = "github_pr_id", nullable = false, unique = true)
     private String gitHubPrId;
 
     // Tell pending, merged, rejected
