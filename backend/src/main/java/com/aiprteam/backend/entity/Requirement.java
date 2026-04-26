@@ -24,11 +24,11 @@ public class Requirement {
    private String description;
 
     @ManyToOne
-    @JoinColumn(name= "sprintId")
+    @JoinColumn(name= "sprint_id")
     private Sprint sprint;
 
     @ManyToOne
-    @JoinColumn(name= "projectId")
+    @JoinColumn(name= "project_id")
     private Project project;
 
     @OneToMany(mappedBy = "rqr")
