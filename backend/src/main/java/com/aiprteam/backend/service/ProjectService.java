@@ -1,4 +1,4 @@
-package com.aiprteam.backend.service.project;
+package com.aiprteam.backend.service;
 
 import com.aiprteam.backend.dto.project.ProjectDto;
 

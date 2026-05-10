@@ -1,18 +1,13 @@
-package com.aiprteam.backend.service.project;
+package com.aiprteam.backend.service.Impl;
 
 import com.aiprteam.backend.dto.auth.UserResponseDto;
 import com.aiprteam.backend.dto.project.ProjectDto;
 import com.aiprteam.backend.entity.Project;
-import com.aiprteam.backend.entity.Users;
 import com.aiprteam.backend.mapper.ProjectMapper;
 import com.aiprteam.backend.repository.ProjectRepository;
 import com.aiprteam.backend.repository.UsersRepository;
-import com.aiprteam.backend.service.auth.AuthServiceImpl;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
+import com.aiprteam.backend.service.ProjectService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-
-import java.util.Optional;
 
 
 public class ProjectServiceImpl implements ProjectService {

@@ -1,8 +1,9 @@
-package com.aiprteam.backend.service.auth;
+package com.aiprteam.backend.service.Impl;
 import com.aiprteam.backend.dto.auth.*;
 import com.aiprteam.backend.entity.Users;
 import com.aiprteam.backend.mapper.AuthMapper;
 import com.aiprteam.backend.repository.UsersRepository;
+import com.aiprteam.backend.service.AuthService;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -10,7 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AuthServiceImpl implements AuthService{
+public class AuthServiceImpl implements AuthService {
 
     private PasswordEncoder passwordEncoder;
     private UsersRepository userRepository;
