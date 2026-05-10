@@ -1,0 +1,5 @@
+package com.aiprteam.backend.service.github;
+
+public interface GithubService {
+
+}
