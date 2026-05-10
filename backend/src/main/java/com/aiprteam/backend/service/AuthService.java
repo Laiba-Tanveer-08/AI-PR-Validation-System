@@ -1,6 +1,5 @@
-package com.aiprteam.backend.service.auth;
+package com.aiprteam.backend.service;
 
-import com.aiprteam.backend.dto.auth.LoginRequestDto;
 import com.aiprteam.backend.dto.auth.RegisterRequestDto;
 import com.aiprteam.backend.dto.auth.UserResponseDto;
 
