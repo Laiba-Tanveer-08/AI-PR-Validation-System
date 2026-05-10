@@ -2,6 +2,8 @@ package com.aiprteam.backend.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.apache.catalina.User;
+
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -19,6 +21,13 @@ public class Project {
     private String name;
     @Column(name="description")
     private String description;
+    @Column(name="start_date")
+    private Date startDate;
+    @Column(name="end_date")
+    private Date endDate;
+    @Column(name="no_of_sprints")
+    private int noOfSprints;
+
     @ManyToOne
     @JoinColumn(name="user_id")
     private Users user;

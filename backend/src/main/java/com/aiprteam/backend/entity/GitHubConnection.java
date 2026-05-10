@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.catalina.User;
-
 import java.time.LocalDateTime;
 
 @Data
@@ -46,7 +44,10 @@ public class GitHubConnection {
     @Column(name = "status", nullable = false)
     private String status;
 
-    @ManyToOne
+    // Lazy and Eager Loading need to search
+    //Lazy loading force nahi krti k child ka data bhi usi time
+    // ayista ayista kr k load krti is se system slow nahi hota
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name= "project_id")
     private Project project;
 
