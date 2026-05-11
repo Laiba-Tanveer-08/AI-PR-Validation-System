@@ -1,4 +1,4 @@
-package com.aiprteam.backend.service.requirement;
+package com.aiprteam.backend.service;
 import com.aiprteam.backend.dto.requirement.RequirementDTO;
 import java.util.List;
 
