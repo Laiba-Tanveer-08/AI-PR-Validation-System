@@ -2,6 +2,7 @@ package com.aiprteam.backend.repository;
 import com.aiprteam.backend.entity.*;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
+import com.aiprteam.backend.entity.Requirement;
 
 /*✅ CREATE / SAVE
 save(requirement)
