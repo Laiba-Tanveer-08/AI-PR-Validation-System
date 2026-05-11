@@ -23,7 +23,6 @@ public class AuthServiceImpl implements AuthService {
         return authMapper.toDto(user);
     }
 
-
     @Override
     public UserResponseDto getCurrentUser() {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
