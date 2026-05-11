@@ -9,8 +9,8 @@ import java.util.List;
 
 public interface GitHubConnectionRepository extends JpaRepository<GitHubConnection, Long> {
     GitHubConnection findByRepoUrl(String repoUrl);
-    List<GitHubConnection> findByUser(Users user);
+   // List<GitHubConnection> findByUser(Users user);
     List<GitHubConnection> findByUserId(Long userId);
     List<GitHubConnection> findByProjectId(Long projectId);
-    List<GitHubConnection> findByProject(Project project);
+  //  List<GitHubConnection> findByProject(Project project);
 }
