@@ -18,8 +18,8 @@ public class PullRequest {
     @Column(name = "name", nullable = false, unique = true)
     private String name;
 
-    @Column(name = "data", nullable = false, unique = true)
-    private String data;
+  //  @Column(name = "data", nullable = false, unique = true)
+    //private String data;
 
     @Column(name = "github_pr_id", nullable = false, unique = true)
     private String gitHubPrId;

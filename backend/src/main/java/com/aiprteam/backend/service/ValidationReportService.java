@@ -1,4 +1,4 @@
-package com.aiprteam.backend.service.report;
+package com.aiprteam.backend.service;
 
 public interface ValidationReportService {
 }
