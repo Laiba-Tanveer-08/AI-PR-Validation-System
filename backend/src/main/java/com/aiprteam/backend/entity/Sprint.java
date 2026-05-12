@@ -23,6 +23,6 @@ public class Sprint {
     @OneToMany(mappedBy = "sprint")
     private List<Requirement> requirements;
     @ManyToOne
-    @JoinTable(name="project_id")
+    @JoinColumn(name="project_id")
     private Project project;
 }
