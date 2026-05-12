@@ -18,6 +18,4 @@ public interface PrService {
     // ✅ Delete PR
     void deletePR(Long id);
 
-public interface PrService {
-
 }

@@ -1,9 +1,15 @@
 package com.aiprteam.backend.service;
 
+import com.aiprteam.backend.dto.auth.UserDto;
 import com.aiprteam.backend.dto.project.ProjectDto;
 
+import java.util.List;
+
 public interface ProjectService {
-    ProjectDto addProject(ProjectDto projectDTO);
-    ProjectDto showProject(Long Id);
+    ProjectDto createProject(ProjectDto dto);
+    ProjectDto getProject(Long Id);
+    ProjectDto updateProject(ProjectDto dto);
+    void deleteProject(Long Id);
+    List<ProjectDto> getAllProjects(UserDto dto);
 
 }

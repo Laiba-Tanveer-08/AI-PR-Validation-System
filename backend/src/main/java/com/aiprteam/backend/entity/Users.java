@@ -1,6 +1,9 @@
 package com.aiprteam.backend.entity;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
+
 @Entity
 @Table(name="users")
 @Getter
@@ -18,4 +21,7 @@ public class Users {
     private String emailAddress;
     @Column(name="password")
     private String password;
+
+    @OneToMany(mappedBy = "user")
+    private List<Project> projects;
 }
