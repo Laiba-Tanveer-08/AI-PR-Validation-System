@@ -7,10 +7,10 @@ public interface RequirementService {
 
 
     // ✅ GET BY ID
-    RequirementDTO getRequirementById(long id);
+    RequirementDTO getRequirementById(Long id);
 
     List<RequirementDTO>getAllRequirements();
-    RequirementDTO updateRequirement(long id ,RequirementDTO dto);
-    RequirementDTO deleteRequirement(long id);
+    RequirementDTO updateRequirement(Long id ,RequirementDTO dto);
+    void deleteRequirement(Long id);
 
 }
