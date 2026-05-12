@@ -1,4 +1,5 @@
 package com.aiprteam.backend.service;
+
 import com.aiprteam.backend.dto.pr.PrDTO;
 import java.util.List;
 public interface PrService {
@@ -16,5 +17,7 @@ public interface PrService {
 
     // ✅ Delete PR
     void deletePR(Long id);
+
+public interface PrService {
 
 }
