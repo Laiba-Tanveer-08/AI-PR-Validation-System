@@ -1,7 +1,7 @@
 package com.aiprteam.backend.service.Impl;
 
-import com.aiprteam.backend.dto.auth.UserDto;
-import com.aiprteam.backend.dto.project.ProjectDto;
+import com.aiprteam.backend.dto.UserDto;
+import com.aiprteam.backend.dto.ProjectDto;
 import com.aiprteam.backend.entity.Project;
 import com.aiprteam.backend.mapper.AuthMapper;
 import com.aiprteam.backend.mapper.ProjectMapper;

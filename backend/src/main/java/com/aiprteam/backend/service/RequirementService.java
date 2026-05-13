@@ -1,5 +1,5 @@
 package com.aiprteam.backend.service;
-import com.aiprteam.backend.dto.requirement.RequirementDTO;
+import com.aiprteam.backend.dto.RequirementDTO;
 import java.util.List;
 
 public interface RequirementService {

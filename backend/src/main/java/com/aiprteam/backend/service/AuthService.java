@@ -1,7 +1,7 @@
 package com.aiprteam.backend.service;
 
-import com.aiprteam.backend.dto.auth.RegisterRequestDto;
-import com.aiprteam.backend.dto.auth.UserDto;
+import com.aiprteam.backend.dto.RegisterRequestDto;
+import com.aiprteam.backend.dto.UserDto;
 
 public interface AuthService {
      UserDto Register(RegisterRequestDto registerRequestDto);

@@ -1,5 +1,5 @@
 package com.aiprteam.backend.service.Impl;
-import com.aiprteam.backend.dto.pr.PrDTO;
+import com.aiprteam.backend.dto.PrDTO;
 import com.aiprteam.backend.entity.*;
 import com.aiprteam.backend.mapper.PrMapper;
 import com.aiprteam.backend.repository.*;

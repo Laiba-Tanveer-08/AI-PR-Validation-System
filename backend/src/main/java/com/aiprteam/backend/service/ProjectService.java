@@ -1,7 +1,7 @@
 package com.aiprteam.backend.service;
 
-import com.aiprteam.backend.dto.auth.UserDto;
-import com.aiprteam.backend.dto.project.ProjectDto;
+import com.aiprteam.backend.dto.UserDto;
+import com.aiprteam.backend.dto.ProjectDto;
 
 import java.util.List;
 

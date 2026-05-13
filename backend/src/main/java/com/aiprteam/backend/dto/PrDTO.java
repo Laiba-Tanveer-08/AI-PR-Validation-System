@@ -1,4 +1,4 @@
-package com.aiprteam.backend.dto.pr;
+package com.aiprteam.backend.dto;
 
 public class PrDTO {
 

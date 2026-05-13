@@ -1,6 +1,6 @@
 package com.aiprteam.backend.service.Impl;
 
-import com.aiprteam.backend.dto.requirement.RequirementDTO;
+import com.aiprteam.backend.dto.RequirementDTO;
 import com.aiprteam.backend.entity.Requirement;
 import com.aiprteam.backend.mapper.RequirementMapper;
 import com.aiprteam.backend.repository.ProjectRepository;

@@ -1,6 +1,6 @@
 package com.aiprteam.backend.service;
 
-import com.aiprteam.backend.dto.pr.PrDTO;
+import com.aiprteam.backend.dto.PrDTO;
 import java.util.List;
 public interface PrService {
     // ✅ Create a new Pull Request

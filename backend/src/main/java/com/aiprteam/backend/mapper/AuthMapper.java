@@ -1,7 +1,7 @@
 package com.aiprteam.backend.mapper;
 
-import com.aiprteam.backend.dto.auth.RegisterRequestDto;
-import com.aiprteam.backend.dto.auth.UserDto;
+import com.aiprteam.backend.dto.RegisterRequestDto;
+import com.aiprteam.backend.dto.UserDto;
 import com.aiprteam.backend.entity.Users;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

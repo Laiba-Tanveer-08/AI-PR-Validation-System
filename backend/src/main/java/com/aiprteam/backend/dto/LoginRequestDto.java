@@ -1,4 +1,4 @@
-package com.aiprteam.backend.dto.auth;
+package com.aiprteam.backend.dto;
 
 import lombok.*;
 

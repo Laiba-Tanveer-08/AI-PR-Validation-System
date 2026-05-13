@@ -1,5 +1,4 @@
-package com.aiprteam.backend.dto.auth;
-import com.aiprteam.backend.dto.project.ProjectDto;
+package com.aiprteam.backend.dto;
 import lombok.*;
 
 import java.util.List;

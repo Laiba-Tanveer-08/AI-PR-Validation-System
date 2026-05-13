@@ -1,4 +1,4 @@
-package com.aiprteam.backend.dto.requirement;
+package com.aiprteam.backend.dto;
 import lombok.*;
 @Data
 @NoArgsConstructor

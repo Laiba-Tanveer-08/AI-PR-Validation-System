@@ -37,10 +37,11 @@ public class GitHubConnection {
     @Column(name = "connected_at", nullable = false)
     private LocalDateTime connectedAt;
 
-    @Column(name = "last_synced_at", nullable = false)
+    @Column(name = "last_synced_at")
     private LocalDateTime lastSyncedAt;
 
     // Tell active, ended? basically connection status
+
     @Column(name = "status", nullable = false)
     private String status;
 

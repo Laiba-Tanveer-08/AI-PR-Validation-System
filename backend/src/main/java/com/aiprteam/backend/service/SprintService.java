@@ -1,7 +1,6 @@
 package com.aiprteam.backend.service;
 
-import com.aiprteam.backend.dto.sprint.SprintDto;
-import com.aiprteam.backend.entity.Sprint;
+import com.aiprteam.backend.dto.SprintDto;
 
 import java.util.List;
 
