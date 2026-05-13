@@ -10,6 +10,8 @@ import java.util.Optional;
 public interface RequirementRepository extends JpaRepository<Requirement, Long> {
     List<Requirement> findBySprintIdAndSprintProjectUserId(Long sprintId, Long userId);
     Optional<Requirement> findByIdAndSprintProjectUserId(Long id, Long projectUserId);
+
+    List<Requirement> findBySprintId(Long sprintId);
     //  List<Requirement> findByProject(Project project);
     // @Override
     // Optional<Requirement> findById(Long aLong);

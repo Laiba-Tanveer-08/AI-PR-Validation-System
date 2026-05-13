@@ -19,30 +19,19 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                // Disable CSRF for testing APIs
+                // Disable CSRF
                 .csrf(AbstractHttpConfigurer::disable)
 
-                // Authorization rules
+                // Allow all APIs
                 .authorizeHttpRequests(auth -> auth
-
-                        // Public endpoint
-                        .requestMatchers("/auth/register", "/login").permitAll()
-
-                        // All other endpoints need authentication
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 )
 
-                // Session login
-                .formLogin(form -> form
-                        .loginProcessingUrl("/login")
-                        .permitAll()
-                )
+                // Disable login form
+                .formLogin(AbstractHttpConfigurer::disable)
 
-                // Logout configuration
-                .logout(logout -> logout
-                        .logoutUrl("/logout")
-                        .permitAll()
-                );
+                // Disable logout
+                .logout(AbstractHttpConfigurer::disable);
 
         return http.build();
     }

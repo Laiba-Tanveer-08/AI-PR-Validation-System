@@ -14,6 +14,6 @@ public interface RequirementMapper {
     Requirement toEntity(RequirementDto dto);
     @Mapping(target = "sprintId", source = "sprint.id")
     RequirementDto toDto(Requirement requirement);
-    @Mapping(target = "sprintId", source = "sprint.id")
+    @Mapping(target = "sprint", ignore = true)
     void updateEntityFromDto(RequirementDto dto, @MappingTarget Requirement requirement);
 }

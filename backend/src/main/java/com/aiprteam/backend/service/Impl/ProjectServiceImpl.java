@@ -21,7 +21,6 @@ public class ProjectServiceImpl implements ProjectService {
    private final ProjectMapper projectMapper;
    private final AuthMapper authMapper;
    private final AuthService authService;
-
     public ProjectDto createProject(ProjectDto dto){
         Project project =projectMapper.toEntity(dto);
         project.setUser(authMapper.toEntity(authService.getCurrentUser()));

@@ -25,7 +25,7 @@ public class PullRequest {
     private Double aiScore;
 
     @Column(name = "github_pr_id", nullable = false, unique = true)
-    private String gitHubPrId;
+    private Long gitHubPrId;
 
     // Tell pending, merged, rejected
     @Column(name = "status", nullable = false)
@@ -34,4 +34,6 @@ public class PullRequest {
     @ManyToOne
     @JoinColumn(name= "sprint_id")
     private Sprint sprint;
+
+
 }
