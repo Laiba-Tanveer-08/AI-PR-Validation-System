@@ -1,5 +1,5 @@
 package com.aiprteam.backend.service.Impl;
-import com.aiprteam.backend.dto.PrDTO;
+import com.aiprteam.backend.dto.PrDto;
 import com.aiprteam.backend.entity.*;
 import com.aiprteam.backend.mapper.PrMapper;
 import com.aiprteam.backend.repository.*;
@@ -34,7 +34,7 @@ public class PrServiceImpl implements PrService {
 
     // ✅ CREATE PR
     @Override
-    public PrDTO createPR(PrDTO dto) {
+    public PrDto createPR(PrDto dto) {
 
         // Convert DTO → Entity
         PullRequest pr = prMapper.toEntity(dto);
@@ -75,7 +75,7 @@ public class PrServiceImpl implements PrService {
 
     // ✅ GET PR BY ID
     @Override
-    public PrDTO getPRById(Long id) {
+    public PrDto getPRById(Long id) {
         PullRequest pr = prRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(
                         HttpStatus.NOT_FOUND,
@@ -87,7 +87,7 @@ public class PrServiceImpl implements PrService {
 
     // ✅ GET ALL PRs
     @Override
-    public List<PrDTO> getAllPRs() {
+    public List<PrDto> getAllPRs() {
         return prRepository.findAll()
                 .stream()
                 .map(prMapper::toDto)
@@ -96,7 +96,7 @@ public class PrServiceImpl implements PrService {
 
     // ✅ UPDATE PR
     @Override
-    public PrDTO updatePR(Long id, PrDTO dto) {
+    public PrDto updatePR(Long id, PrDto dto) {
 
         PullRequest existing = prRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(

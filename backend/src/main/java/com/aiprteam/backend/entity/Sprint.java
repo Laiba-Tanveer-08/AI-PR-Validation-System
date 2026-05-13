@@ -1,11 +1,16 @@
 package com.aiprteam.backend.entity;
+
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name="sprint")
+@Table(name = "sprint")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -14,15 +19,17 @@ public class Sprint {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name="name")
+    @Column(name = "name")
     private String name;
-    @Column(name="start_date")
+    @Column(name = "start_date")
     private Date startDate;
-    @Column(name="end_date")
+    @Column(name = "end_date")
     private Date endDate;
-    @OneToMany(mappedBy = "sprint")
+    @OneToMany(mappedBy = "sprint", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Requirement> requirements;
     @ManyToOne
-    @JoinColumn(name="project_id")
+    @JoinColumn(name = "project_id")
     private Project project;
+    @OneToMany(mappedBy = "sprint")
+    private List<PullRequest> pullRequests;
 }

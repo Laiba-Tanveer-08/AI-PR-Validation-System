@@ -1,5 +1,5 @@
 package com.aiprteam.backend.mapper;
-import com.aiprteam.backend.dto.PrDTO;
+import com.aiprteam.backend.dto.PrDto;
 import com.aiprteam.backend.entity.PullRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -11,11 +11,11 @@ public interface PrMapper {
     @Mapping(target = "rqr", ignore = true)
     @Mapping(target = "sprint", ignore = true)
     @Mapping(target = "project", ignore = true)
-    PullRequest toEntity(PrDTO dto);
+    PullRequest toEntity(PrDto dto);
 
     // 🔁 Entity → DTO
     @Mapping(target = "requirementId", source = "rqr.id")
     @Mapping(target = "sprintId", source = "sprint.id")
     @Mapping(target = "projectId", source = "project.id")
-    PrDTO toDto(PullRequest pr);
+    PrDto toDto(PullRequest pr);
 }

@@ -1,19 +1,19 @@
 package com.aiprteam.backend.service;
 
-import com.aiprteam.backend.dto.PrDTO;
+import com.aiprteam.backend.dto.PrDto;
 import java.util.List;
 public interface PrService {
     // ✅ Create a new Pull Request
-    PrDTO createPR(PrDTO dto);
+    PrDto createPR(PrDto dto);
 
     // ✅ Get PR by ID
-    PrDTO getPRById(Long id);
+    PrDto getPRById(Long id);
 
     // ✅ Get all PRs
-    List<PrDTO> getAllPRs();
+    List<PrDto> getAllPRs();
 
     // ✅ Update PR
-    PrDTO updatePR(Long id, PrDTO dto);
+    PrDto updatePR(Long id, PrDto dto);
 
     // ✅ Delete PR
     void deletePR(Long id);

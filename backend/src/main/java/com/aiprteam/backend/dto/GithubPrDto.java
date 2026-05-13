@@ -2,7 +2,7 @@ package com.aiprteam.backend.dto;
 
 import java.time.LocalDateTime;
 
-public class GithubDto {
+public class GithubPrDto {
 
 
         private Long id;

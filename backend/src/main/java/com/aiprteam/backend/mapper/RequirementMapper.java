@@ -1,18 +1,19 @@
 package com.aiprteam.backend.mapper;
-import com.aiprteam.backend.dto.RequirementDTO;
+
+import com.aiprteam.backend.dto.RequirementDto;
+import com.aiprteam.backend.dto.SprintDto;
 import com.aiprteam.backend.entity.Requirement;
+import com.aiprteam.backend.entity.Sprint;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 
-@Mapper (componentModel = "spring")
+@Mapper(componentModel = "spring")
 public interface RequirementMapper {
     @Mapping(target = "sprint", ignore = true)
-    @Mapping(target = "project", ignore = true)
-    Requirement toEntity(RequirementDTO dto);
+    Requirement toEntity(RequirementDto dto);
 
-    // Entity → DTO
     @Mapping(target = "sprintId", source = "sprint.id")
-    @Mapping(target = "projectId", source = "project.id")
-    RequirementDTO toDto(Requirement requirement);
-
+    RequirementDto toDto(Requirement requirement);
+    void updateEntityFromDto(RequirementDto dto, @MappingTarget Requirement requirement);
 }

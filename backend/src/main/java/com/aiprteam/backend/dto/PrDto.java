@@ -1,6 +1,6 @@
 package com.aiprteam.backend.dto;
 
-public class PrDTO {
+public class PrDto {
 
 
         private Long id;
