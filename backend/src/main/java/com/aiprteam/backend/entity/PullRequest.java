@@ -18,8 +18,11 @@ public class PullRequest {
     @Column(name = "name", nullable = false, unique = true)
     private String name;
 
-  //  @Column(name = "data", nullable = false, unique = true)
-    //private String data;
+    @Column(name = "ai_summary", length = 2000)
+    private String aiSummary;
+
+    @Column(name = "ai_score")
+    private Double aiScore;
 
     @Column(name = "github_pr_id", nullable = false, unique = true)
     private String gitHubPrId;
@@ -29,14 +32,6 @@ public class PullRequest {
     private String status;
 
     @ManyToOne
-    @JoinColumn(name= "rqr_id")
-    private Requirement rqr;
-
-    @ManyToOne
     @JoinColumn(name= "sprint_id")
     private Sprint sprint;
-
-    @ManyToOne
-    @JoinColumn(name= "project_id")
-    private Project project;
 }

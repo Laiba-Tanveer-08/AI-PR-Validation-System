@@ -6,5 +6,6 @@ import com.aiprteam.backend.dto.UserDto;
 public interface AuthService {
      UserDto Register(RegisterRequestDto registerRequestDto);
      UserDto getCurrentUser();
+     void DeleteUser();
 
 }

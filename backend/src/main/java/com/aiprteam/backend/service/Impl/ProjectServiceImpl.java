@@ -8,22 +8,23 @@ import com.aiprteam.backend.mapper.ProjectMapper;
 import com.aiprteam.backend.repository.ProjectRepository;
 import com.aiprteam.backend.service.AuthService;
 import com.aiprteam.backend.service.ProjectService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
+@Service
+@RequiredArgsConstructor
 public class ProjectServiceImpl implements ProjectService {
-    ProjectRepository projectRepository;
-    ProjectMapper projectMapper;
-    AuthMapper authMapper;
-    Project project;
-    AuthService authService = new AuthServiceImpl();
+   private final ProjectRepository projectRepository;
+   private final ProjectMapper projectMapper;
+   private final AuthMapper authMapper;
+   private final AuthService authService;
 
     public ProjectDto createProject(ProjectDto dto){
-
-        project =  projectRepository.save(projectMapper.toEntity(dto));
+        Project project =projectMapper.toEntity(dto);
         project.setUser(authMapper.toEntity(authService.getCurrentUser()));
+        project =  projectRepository.save(project);
 
         return projectMapper.toDto(project);
     }
@@ -32,12 +33,10 @@ public class ProjectServiceImpl implements ProjectService {
 
             UserDto user  = authService.getCurrentUser();
             Project project= projectRepository.findByIdAndUserId(Id, user.getId())
-                    .orElseThrow(() -> new UsernameNotFoundException("User not found with id: " + Id));
+                    .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + Id));
 
            return  projectMapper.toDto(project);
         }
-
-
 
     @Override
     public ProjectDto updateProject(ProjectDto dto) {
@@ -45,27 +44,27 @@ public class ProjectServiceImpl implements ProjectService {
 
         Project existedProject = projectRepository
                 .findByIdAndUserId(dto.getId(), currentUser.getId())
-                .orElseThrow(() -> new RuntimeException("Project not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Project not found"));
         projectMapper.updateProjectFromDto(dto, existedProject);
-       Project updatedProject = projectRepository.save(existedProject);
+        Project updatedProject = projectRepository.save(existedProject);
 
-       return projectMapper.toDto(updatedProject);
+        return projectMapper.toDto(updatedProject);
     }
 
     @Override
     public void deleteProject(Long Id) {
-
+        Project project;
         UserDto currentUser = authService.getCurrentUser();
 
         project = projectRepository
                 .findByIdAndUserId(Id, currentUser.getId())
-                .orElseThrow(() -> new RuntimeException("Project not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Project not found"));
          projectRepository.delete(project);
     }
 
     @Override
-    public List<ProjectDto> getAllProjects(UserDto dto) {
-
+    public List<ProjectDto> getAllProjects() {
+        UserDto dto = authService.getCurrentUser();
         List<Project> projects = projectRepository.findByUserId(dto.getId());
         return projects.stream()
                 .map(projectMapper::toDto)
