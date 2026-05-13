@@ -1,5 +1,5 @@
 package com.aiprteam.backend.mapper;
-import com.aiprteam.backend.dto.requirement.RequirementDTO;
+import com.aiprteam.backend.dto.RequirementDTO;
 import com.aiprteam.backend.entity.Requirement;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

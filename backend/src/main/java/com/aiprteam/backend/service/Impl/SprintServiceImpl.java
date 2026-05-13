@@ -1,15 +1,12 @@
 package com.aiprteam.backend.service.Impl;
 
-import com.aiprteam.backend.dto.sprint.SprintDto;
+import com.aiprteam.backend.dto.SprintDto;
 import com.aiprteam.backend.entity.Project;
 import com.aiprteam.backend.entity.Sprint;
-import com.aiprteam.backend.mapper.ProjectMapper;
 import com.aiprteam.backend.mapper.SprintMapper;
 import com.aiprteam.backend.repository.ProjectRepository;
 import com.aiprteam.backend.repository.SprintRepository;
-import com.aiprteam.backend.service.ProjectService;
 import com.aiprteam.backend.service.SprintService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import java.util.List;
 

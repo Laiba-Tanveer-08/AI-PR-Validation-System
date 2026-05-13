@@ -1,6 +1,6 @@
 package com.aiprteam.backend.mapper;
 
-import com.aiprteam.backend.dto.project.ProjectDto;
+import com.aiprteam.backend.dto.ProjectDto;
 import com.aiprteam.backend.entity.Project;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

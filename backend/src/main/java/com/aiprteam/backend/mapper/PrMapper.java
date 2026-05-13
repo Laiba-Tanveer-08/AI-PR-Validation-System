@@ -1,5 +1,5 @@
 package com.aiprteam.backend.mapper;
-import com.aiprteam.backend.dto.pr.PrDTO;
+import com.aiprteam.backend.dto.PrDTO;
 import com.aiprteam.backend.entity.PullRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

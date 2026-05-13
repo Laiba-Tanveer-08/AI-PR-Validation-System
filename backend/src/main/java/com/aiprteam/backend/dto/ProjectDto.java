@@ -1,4 +1,4 @@
-package com.aiprteam.backend.dto.project;
+package com.aiprteam.backend.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

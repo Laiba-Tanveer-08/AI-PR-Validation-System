@@ -1,6 +1,6 @@
 package com.aiprteam.backend.mapper;
 
-import com.aiprteam.backend.dto.sprint.SprintDto;
+import com.aiprteam.backend.dto.SprintDto;
 import com.aiprteam.backend.entity.Sprint;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
