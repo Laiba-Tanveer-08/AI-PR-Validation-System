@@ -31,12 +31,16 @@ public class Project {
     @ManyToOne
     @JoinColumn(name="user_id")
     private Users user;
-    @OneToMany(mappedBy = "project")
+    @OneToMany(mappedBy = "project",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
     private List<GitHubConnection> gitHubConnections;
-    @OneToMany(mappedBy="project")
-    private List<Requirement> requirements;
-    @OneToMany(mappedBy="project")
-    private List<PullRequest> pullRequests;
-    @OneToMany(mappedBy="project")
-    private List<Sprint> sprints;
-}
+//    @OneToMany(mappedBy="project")
+//    private List<Requirement> requirements;
+//    @OneToMany(mappedBy="project")
+//    private List<PullRequest> pullRequests;
+        @OneToMany(mappedBy = "project",
+                cascade = CascadeType.ALL,
+                orphanRemoval = true)
+        private List<Sprint> sprints;
+        }

@@ -19,6 +19,6 @@ public class ProjectDto {
     private int noOfSprints;
     private List<Long> sprintIds;
     private Long userId;
-    private List<Long> gitHubConncetionIds;
-    private List<Long> pullRequestIds;
+    private List<Long> gitHubConnectionIds;
+
 }
