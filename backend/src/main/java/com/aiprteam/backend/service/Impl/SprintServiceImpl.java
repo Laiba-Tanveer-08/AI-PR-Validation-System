@@ -8,6 +8,7 @@ import com.aiprteam.backend.mapper.RequirementMapper;
 import com.aiprteam.backend.mapper.SprintMapper;
 import com.aiprteam.backend.repository.ProjectRepository;
 import com.aiprteam.backend.repository.SprintRepository;
+import com.aiprteam.backend.service.AuthService;
 import com.aiprteam.backend.service.SprintService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -21,23 +22,27 @@ public class SprintServiceImpl implements SprintService {
     private final ProjectRepository projectRepository;
     private final SprintMapper sprintMapper;
     private final RequirementMapper requirementMapper;
+    private final AuthService authService;
 
     @Override
     public List<SprintDto> getAllSprint(Long projectId) {
-        List<Sprint> sprints = sprintRepository.findByProjectId(projectId);
+        Long userId = authService.getCurrentUser().getId();
+        List<Sprint> sprints = sprintRepository.findByProjectIdAndProjectUserId(projectId, userId);
         return sprints.stream().map(sprintMapper::toDto).toList();
     }
 
 
     @Override
     public SprintDto getSprint(Long id, Long projectId) {
-        Sprint sprint = sprintRepository.findByIdAndProjectId(id, projectId).orElseThrow(() -> new ResourceNotFoundException("Sprint not found"));
+        Long userId = authService.getCurrentUser().getId();
+        Sprint sprint = sprintRepository.findByIdAndProjectIdAndProjectUserId(id, projectId, userId).orElseThrow(() -> new ResourceNotFoundException("Sprint not found"));
         return sprintMapper.toDto(sprint);
     }
 
     @Override
     public SprintDto createSprint(SprintDto dto) {
-        Project project = projectRepository.findById(dto.getProjectId()).orElseThrow(() -> new ResourceNotFoundException("Project not found with id: " + dto.getProjectId()));
+        Long userId = authService.getCurrentUser().getId();
+        Project project = projectRepository.findByIdAndUserId(dto.getProjectId(), userId).orElseThrow(() -> new ResourceNotFoundException("Project not found with id: " + dto.getProjectId()));
         Sprint sprint = sprintMapper.toEntity(dto);
         sprint.setProject(project);
         sprintRepository.save(sprint);
@@ -46,7 +51,8 @@ public class SprintServiceImpl implements SprintService {
 
     @Override
     public SprintDto updateSprint(Long id, SprintDto dto) {
-        Sprint sprint = sprintRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Sprint not found with id: " + id));
+        Long userId = authService.getCurrentUser().getId();
+        Sprint sprint = sprintRepository.findByIdAndProjectId(id, userId).orElseThrow(() -> new ResourceNotFoundException("Sprint not found with id: " + id));
         sprintMapper.updateEntityFromDto(dto, sprint);
         sprintRepository.save(sprint);
         return (sprintMapper.toDto(sprint));
@@ -54,7 +60,8 @@ public class SprintServiceImpl implements SprintService {
 
     @Override
     public void deleteSprint(Long id) {
-        Sprint sprint = sprintRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Sprint not found with id: " + id));
+        Long userId = authService.getCurrentUser().getId();
+        Sprint sprint = sprintRepository.findByIdAndProjectUserId(id, userId).orElseThrow(() -> new ResourceNotFoundException("Sprint not found with id: " + id));
         sprintRepository.delete(sprint);
     }
 }
