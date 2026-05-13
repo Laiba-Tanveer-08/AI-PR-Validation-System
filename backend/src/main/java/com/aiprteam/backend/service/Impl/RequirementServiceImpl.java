@@ -1,6 +1,6 @@
 package com.aiprteam.backend.service.Impl;
 
-import com.aiprteam.backend.dto.RequirementDTO;
+import com.aiprteam.backend.dto.RequirementDto;
 import com.aiprteam.backend.entity.Requirement;
 import com.aiprteam.backend.mapper.RequirementMapper;
 import com.aiprteam.backend.repository.ProjectRepository;
@@ -34,7 +34,7 @@ public class RequirementServiceImpl implements RequirementService {
 
     // ✅ CREATE
     @Override
-    public RequirementDTO createRequirement(RequirementDTO dto) {
+    public RequirementDto createRequirement(RequirementDto dto) {
 
         Requirement requirement = requirementMapper.toEntity(dto);
 
@@ -63,7 +63,7 @@ public class RequirementServiceImpl implements RequirementService {
 
     // ✅ GET BY ID
     @Override
-    public RequirementDTO getRequirementById(Long id) {
+    public RequirementDto getRequirementById(Long id) {
         Requirement requirement = requirementRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(
                         HttpStatus.NOT_FOUND,
@@ -75,7 +75,7 @@ public class RequirementServiceImpl implements RequirementService {
 
     // ✅ GET ALL
     @Override
-    public List<RequirementDTO> getAllRequirements() {
+    public List<RequirementDto> getAllRequirements() {
         return requirementRepository.findAll()
                 .stream()
                 .map(requirementMapper::toDto)
@@ -84,7 +84,7 @@ public class RequirementServiceImpl implements RequirementService {
 
     // ✅ UPDATE
     @Override
-    public RequirementDTO updateRequirement(Long id, RequirementDTO dto) {
+    public RequirementDto updateRequirement(Long id, RequirementDto dto) {
 
         Requirement existing = requirementRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(

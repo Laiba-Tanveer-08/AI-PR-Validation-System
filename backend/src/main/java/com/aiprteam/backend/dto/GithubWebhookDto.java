@@ -1,6 +1,6 @@
 package com.aiprteam.backend.dto;
 
-public class GithubRepositoryDto {
+public class GithubWebhookDto {
         private Long githubRepoId;
 
         private String repoName;

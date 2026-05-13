@@ -13,24 +13,21 @@ import java.util.List;
 @Entity
 @Table(name = "requirement")
 public class Requirement {
-   @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private Long id;
-
-   @Column(name = "name", nullable = false, unique = true)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "name", nullable = false, unique = true)
     private String name;
-
-   @Column(name = "description", nullable = false, unique = true)
-   private String description;
-
+    @Column(name = "description", nullable = false, unique = true)
+    private String description;
     @ManyToOne
-    @JoinColumn(name= "sprint_id")
+    @JoinColumn(name = "sprint_id")
     private Sprint sprint;
 
-   // @ManyToOne
-    @JoinColumn(name= "project_id")
-    private Project project;
+    // @ManyToOne
+    // @JoinColumn(name = "project_id")
+    // private Project project;
 
-    @OneToMany(mappedBy = "rqr")
-    private List<PullRequest> pullRequests;
+    //  @OneToMany(mappedBy = "rqr")
+    //  private List<PullRequest> pullRequests;
 }

@@ -1,16 +1,16 @@
 package com.aiprteam.backend.service;
-import com.aiprteam.backend.dto.RequirementDTO;
+import com.aiprteam.backend.dto.RequirementDto;
 import java.util.List;
 
 public interface RequirementService {
-    RequirementDTO createRequirement(RequirementDTO dto);
+    RequirementDto createRequirement(RequirementDto dto);
 
 
     // ✅ GET BY ID
-    RequirementDTO getRequirementById(Long id);
+    RequirementDto getRequirementById(Long id);
 
-    List<RequirementDTO>getAllRequirements();
-    RequirementDTO updateRequirement(Long id ,RequirementDTO dto);
+    List<RequirementDto>getAllRequirements();
+    RequirementDto updateRequirement(Long id , RequirementDto dto);
     void deleteRequirement(Long id);
 
 }

@@ -9,9 +9,16 @@ import org.mapstruct.MappingTarget;
 
 @Mapper(componentModel = "spring")
 public interface SprintMapper {
-    @Mapping(target="project" , ignore = true)
-    @Mapping(target="requirements" , ignore = true)
-    SprintDto toDto(Sprint sprint);
+    @Mapping(target = "project", ignore = true)
+    @Mapping(target = "requirements", ignore = true)
     Sprint toEntity(SprintDto dto);
+
+    @Mapping(target = "id", source = "sprint.id")
+    @Mapping(target = "requirementIds",
+            expression = "java(sprint.getRequirements!=null?" +
+            "sprint.getRequirements().stream().map(Requirement::getId).toList() : null)")
+    SprintDto toDto(Sprint sprint);
+    @Mapping(target="project", ignore=true)
+    @Mapping(target = "requirements", ignore = true)
     void updateEntityFromDto(SprintDto dto, @MappingTarget Sprint sprint);
 }
