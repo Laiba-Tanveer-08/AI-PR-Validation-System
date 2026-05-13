@@ -1,22 +1,36 @@
-
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
 import { Outlet } from "react-router-dom";
 
 function AppLayout() {
     return (
-        <div style={{ display: "flex" }}>
+        <div style={layout}>
             <Sidebar />
 
-            <div style={{ flex: 1 }}>
+            <div style={main}>
                 <Topbar />
 
-                <div style={{ padding: "20px" }}>
+                <div style={content}>
                     <Outlet />
                 </div>
             </div>
         </div>
     );
 }
+
+const layout = {
+    display: "flex",
+    background: "#f9fafb"
+};
+
+const main = {
+    flex: 1,
+    display: "flex",
+    flexDirection: "column"
+};
+
+const content = {
+    padding: "20px"
+};
 
 export default AppLayout;
