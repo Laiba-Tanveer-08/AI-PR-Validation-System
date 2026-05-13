@@ -8,8 +8,8 @@ import java.util.List;
 @AllArgsConstructor
 public class UserDto {
     private Long id;
-    private String username;
-    private String email;
+    private String name;
+    private String emailAddress;
     private String password;
     private List<Long> projectIds;
 }
