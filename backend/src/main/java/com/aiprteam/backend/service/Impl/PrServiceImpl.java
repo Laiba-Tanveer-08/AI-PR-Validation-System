@@ -1,6 +1,7 @@
 package com.aiprteam.backend.service.Impl;
 import com.aiprteam.backend.dto.PrDto;
 import com.aiprteam.backend.entity.*;
+import com.aiprteam.backend.exception.ResourceNotFoundException;
 import com.aiprteam.backend.mapper.PrMapper;
 import com.aiprteam.backend.repository.*;
 import com.aiprteam.backend.service.PrService;
