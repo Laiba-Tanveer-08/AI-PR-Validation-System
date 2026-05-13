@@ -1,30 +1,24 @@
 package com.aiprteam.backend.dto;
 
-import java.time.LocalDateTime;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.util.List;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class GithubPrDto {
 
-
-        private Long id;
-
-        private String repoUrl;
-
-        private String webHookUrl;
-
-        private String repoName;
-
-        private String repoOwner;
-
-        private LocalDateTime connectedAt;
-
-        private LocalDateTime lastSyncedAt;
-
-        private String status;
-
-        // Instead of full object
-        private Long projectId;
-
-        // Instead of full Users object
-        private Long userId;
-    }
+    private Long prNumber;
+    private String prTitle;
+    private List<String> changedFiles;
+    private String author;
+    private String branch;
+    private String diff;
+    private String status;
+    private String repoName;
+    private String repoOwner;
+}
 
